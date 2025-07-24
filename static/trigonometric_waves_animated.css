@@ -1,0 +1,94 @@
+::placeholder {
+  color: black;
+}
+#mycanvas {
+  width: 520px;
+  height: 500px;
+  background-color: black;
+  border: 5px solid green;
+  border-radius: 4px;
+  margin: auto;
+}
+body {
+  background-image: url("../static/Trigonometric_Image.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  flex-direction: column;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 8px;
+}
+.form-container {
+  text-align: center;
+}
+.square {
+  background-color: white;
+  font-weight: bold;
+  font-size: auto;
+  border: 4px solid black;
+  border-radius: 4px;
+  height: auto;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+#myVideo {
+  object-fit: cover;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+}
+#turtlecode {
+  display: none;
+}
+#submit {
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit:active,
+#submit:hover {
+  outline: 0;
+}
+
+#submit span {
+  background-color: rgb(5, 6, 45);
+  padding: 12px 30px;
+  border-radius: 6px;
+  transition: 300ms;
+}
+
+#submit:hover span {
+  background: none;
+}

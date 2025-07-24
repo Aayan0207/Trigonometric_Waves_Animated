@@ -1,0 +1,179 @@
+<html lang="en"> 
+<head> 
+<script src="https://skulpt.org/js/skulpt.min.js" type="text/javascript"></script>
+<script src="https://skulpt.org/js/skulpt-stdlib.js" type="text/javascript"></script> 
+<title>Trigonometric Waves Animated</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="icon" href="../static/TWA icon.jpg" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../static/trigonometric_waves_animated.css">
+<script type="text/javascript" src="../static/trigonometric_waves_animated.js"></script> 
+</head>
+<body>
+<p style="text-align:center; font-size:30px;"><u><b>Trigonometric Waves Animated</p></u></b>
+<p style="font-size:18px;">Select the graphs that you would like to see.</p>
+<form action="/" id="Trig-form" method="POST">
+    <div class="form-container">
+    <div class="grid-container">
+        <input type="text" class="square" name="Sin" value="" id="Sin" placeholder="Sin" readonly style="background-color:#ff0000; box-shadow: 5px 5px 5px  rgba(255,0,0,.6);">
+        <input type="text" class="square" name="Cos" value="" id="Cos" placeholder="Cos" readonly style="background-color:#4d94ff; box-shadow: 5px 5px 5px  rgba(77, 148, 255,.6);">
+        <input type="text" class="square" name="Tan" value="" id="Tan" placeholder="Tan" readonly style="background-color:#ffa500; box-shadow: 5px 5px 5px  rgba(255, 165, 0,.6);">
+        <input type="text" class="square" name="Cot" value="" id="Cot" placeholder="Cot" readonly style="background-color:#5cd65c; box-shadow: 5px 5px 5px  rgba(92, 214, 92,.6);">
+        <input type="text" class="square" name="Sec" value="" id="Sec" placeholder="Sec" readonly style="background-color:#fff550; box-shadow: 5px 5px 5px  rgba(255, 245, 80,.6);">
+        <input type="text" class="square" name="Cosec" value="" id="Cosec" placeholder="Cosec" readonly style="background-color:#800080; box-shadow: 5px 5px 5px  rgba(128, 0, 128,.6);">
+        <input type="text" class="square" name="Sin_Inverse" value="" id="Sin_Inverse" placeholder="Sin Inverse" readonly style="background-color:#ff0000; box-shadow: 5px 5px 5px  rgba(255, 0, 0,.6);">
+        <input type="text" class="square" name="Cos_Inverse" value="" id="Cos_Inverse" placeholder="Cos Inverse" readonly style="background-color:#4d94ff; box-shadow: 5px 5px 5px  rgba(77, 148, 255,.6);">
+        <input type="text" class="square" name="Tan_Inverse" value="" id="Tan_Inverse" placeholder="Tan Inverse" readonly style="background-color:#ffa500; box-shadow: 5px 5px 5px  rgba(255, 165, 0,.6);">
+        <input type="text" class="square" name="Cot_Inverse" value="" id="Cot_Inverse" placeholder="Cot Inverse" readonly style="background-color:#5cd65c; box-shadow: 5px 5px 5px  rgba(92, 214, 92,.6);">
+        <input type="text" class="square" name="Sec_Inverse" value="" id="Sec_Inverse" placeholder="Sec Inverse" readonly style="background-color:#fff550; box-shadow: 5px 5px 5px  rgba(255, 245, 80,.6);">
+        <input type="text" class="square" name="Cosec_Inverse" value="" id="Cosec_Inverse" placeholder="Cosec Inverse" readonly style="background-color:#800080; box-shadow: 5px 5px 5px  rgba(128, 0, 128,.6);">
+    </div>
+    <br>
+    <br>
+    <div style="text-align: center;">
+    <button type="submit" id="submit"><span class="text">Plot</span></button>
+    </div>
+    <br>
+</form>
+<form>
+<textarea id="turtlecode">from turtle import *
+from math import sin,cos,tan,radians,asin,acos,atan
+turtles=['Sin','Cos','Tan','Cot','Sec','Cosec','NegSin','NegCos','NegTan','NegCot','NegSec','NegCosec','SinInv','CosInv','TanInv','CotInv','SecInv','CosecInv','NegSinInv','NegCosInv','NegTanInv','NegCotInv','NegSecInv','NegCosecInv']
+def main():
+        Screen().bgcolor('black')
+        Screen().setworldcoordinates(-400,-3,400,3)
+        colors=['#ff0000','#4d94ff','#ffa500','#5cd65c','#fff550','#800080','#ff0000','#4d94ff','#ffa500','#5cd65c','#fff550','#800080','#ff0000','#4d94ff','#ffa500','#5cd65c','#fff550','#800080','#ff0000','#4d94ff','#ffa500','#5cd65c','#fff550','#800080']
+        for i in range(len(turtles)):
+            turtles[i]=Turtle()
+            turtles[i].ht()
+            turtles[i].color(colors[i])
+            turtles[i].speed('fastest')
+        Write=Turtle()
+        Write.color('white')
+        Write.ht()
+        Write.speed('fastest')
+        Write.forward(360)
+        Write.backward(720)
+        Write.forward(360)
+        Write.left(90)
+        Write.forward(2)
+        Write.backward(4) 
+        up()
+        for i in range(0,360):
+                if Sin_Inverse:
+                        try:
+                            Sin_Inverse(i)
+                        except:
+                            pass
+                if Cos_Inverse:
+                        try:
+                            Cos_Inverse(i)
+                        except:
+                            pass
+                if Tan_Inverse:
+                        try:
+                            Tan_Inverse(i)
+                        except:
+                            pass
+                if Cot_Inverse:
+                        try:
+                            Cot_Inverse(i)
+                        except:
+                                pass
+                if Sec_Inverse and i>=58:
+                        try:
+                            Sec_Inverse(i)
+                            turtles[16].pendown()
+                            turtles[22].pendown()
+                        except:
+                                pass
+                if Cosec_Inverse and i>=58:
+                        try:
+                            Cosec_Inverse(i)
+                            turtles[17].pendown()
+                            turtles[23].pendown()
+                        except:
+                            pass
+                if Sin:
+                        Sin(i)
+                if Cos:
+                        Cos(i)
+                if Tan:
+                        Tan(i)
+                if Cot:
+                        Cot(i)
+                if Sec:
+                        Sec(i)
+                if Cosec:
+                        Cosec(i)
+def up():
+    turtles[16].penup()
+    turtles[22].penup()
+    turtles[17].penup()
+    turtles[23].penup()
+def Sin_Inverse(x):
+    turtles[12].goto(x,asin(radians(x)))
+    turtles[18].goto(-x,asin(radians(-x)))
+def Cos_Inverse(x):
+    turtles[13].goto(x,acos(radians(x)))
+    turtles[19].goto(-x,acos(radians(-x)))
+def Tan_Inverse(x):
+    turtles[14].goto(x,atan(radians(x)))
+    turtles[20].goto(-x,atan(radians(-x)))
+def Cot_Inverse(x):
+    turtles[15].goto(x,atan(1/radians(x)))
+    turtles[21].goto(-x,radians(180)+atan(1/radians(-x)))
+def Sec_Inverse(x):
+    turtles[16].goto(x,acos(1/radians(x)))
+    turtles[22].goto(-x,acos(1/radians(-x)))
+def Cosec_Inverse(x):
+    turtles[17].goto(x,asin(1/radians(x)))
+    turtles[23].goto(-x,asin(1/radians(-x))) 
+def Sin(x):
+    turtles[0].goto(x,sin(radians(x)))
+    turtles[6].goto(-x,sin(radians(-x)))
+def Cos(x):
+    turtles[1].goto(x,cos(radians(x)))
+    turtles[7].goto(-x,cos(radians(-x)))
+def Tan(x):
+    if x%90==0:
+        turtles[2].goto(x,0)
+        turtles[8].goto(-x,0)
+    else:
+        turtles[2].goto(x,tan(radians(x)))
+        turtles[8].goto(-x,tan(radians(-x)))
+def Cot(x):
+    if x%90==0:
+        turtles[3].goto(x,0)
+        turtles[9].goto(-x,0)
+    else:
+        turtles[3].goto(x,1/(tan(radians(x))))
+        turtles[9].goto(-x,1/(tan(radians(-x))))
+def Sec(x):
+    if x==90 or x==270:
+        turtles[4].goto(x,0)
+        turtles[10].goto(-x,0)
+    else:
+        turtles[4].goto(x,1/(cos(radians(x))))
+        turtles[10].goto(-x,(1/cos(radians(-x))))
+def Cosec(x):
+    if x==180 or x==0:
+        turtles[5].goto(x,0)
+        turtles[11].goto(-x,0)
+    else:
+        turtles[5].goto(x,1/(sin(radians(x))))
+        turtles[11].goto(-x,(1/sin(radians(-x))))
+if __name__=='__main__':
+    main()
+</textarea> 
+</form> 
+<pre id="output" ></pre> 
+<div id="mycanvas"></div>
+</div>
+<video autoplay muted loop id="myVideo">
+    <source src="../static/Trigonometric_Wave_Video.mp4" type="video/mp4">
+</video>
+</body> 
+</html> 
