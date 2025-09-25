@@ -4,6 +4,12 @@ The site showcases animations of the trigonometric functions (Inverse ones too) 
 The animations are rendered dynamically onto the webpage with the help of Skulpt.
 Feel free to choose multiple options and mix and match to your heart's content.
 
+## Website Link
+
+[![Website Link](static/Landing%20Page%20TWA.png)](https://trigonometricwavesanimated.vercel.app/)
+## Demo
+
+[![Video Demo](https://img.youtube.com/vi/GCtpWvT0zew/0.jpg)](https://youtu.be/GCtpWvT0zew)
 ## Recognition:
 Submitted to Coolest Projects Online 2025 (Web)
 
