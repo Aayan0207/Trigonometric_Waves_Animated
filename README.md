@@ -13,6 +13,7 @@ Feel free to choose multiple options and mix and match to your heart's content.
 [![Video Demo](https://img.youtube.com/vi/GCtpWvT0zew/0.jpg)](https://youtu.be/GCtpWvT0zew)
 
 ## Recognition:
+
 ### Submitted to Coolest Projects Online 2025 (Web)
 
 #### Feedback: 
